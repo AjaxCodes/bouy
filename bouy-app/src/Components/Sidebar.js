@@ -6,6 +6,9 @@ import PersonIcon from "@material-ui/icons/Person";
 import DragIndicatorIcon from "@material-ui/icons/DragIndicator";
 import DonutSmallIcon from "@material-ui/icons/DonutSmall";
 import FindReplaceIcon from "@material-ui/icons/FindReplace";
+import SidebarChat from "../Components/SidebarChat";
+
+
 
 function Sidebar() {
   return (
@@ -31,7 +34,11 @@ function Sidebar() {
         </div>
       </div>
       <div className="sidebarChats">
-          
+          <SidebarChat />
+          <SidebarChat />
+          <SidebarChat />
+          <SidebarChat />
+
       </div>
     </div>
   );
