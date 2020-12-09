@@ -8,8 +8,6 @@ import DonutSmallIcon from "@material-ui/icons/DonutSmall";
 import FindReplaceIcon from "@material-ui/icons/FindReplace";
 import SidebarChat from "../Components/SidebarChat";
 
-
-
 function Sidebar() {
   return (
     <div className="sidebar">
@@ -34,11 +32,10 @@ function Sidebar() {
         </div>
       </div>
       <div className="sidebarChats">
-          <SidebarChat />
-          <SidebarChat />
-          <SidebarChat />
-          <SidebarChat />
-
+        <SidebarChat />
+        <SidebarChat />
+        <SidebarChat />
+        <SidebarChat />
       </div>
     </div>
   );

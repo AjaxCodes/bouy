@@ -6,13 +6,11 @@ import { IconButton } from "@material-ui/core";
 import AttachmentIcon from "@material-ui/icons/Attachment";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
-
-
 function Chat() {
   return (
     <div className="chat">
       <div className="chatHeader">
-        <img src={bouycut} />
+        <img src={bouycut} alt="logo" />
         <div className="chatHeaderInfo">
           <h3> Room Name </h3>
           <p>Last seen at ... </p>
@@ -28,6 +26,20 @@ function Chat() {
             <MoreVertIcon />
           </IconButton>
         </div>
+      </div>
+      <div className="chatBody">
+       
+      <p className="chatMessage">
+          <span className="chatName">AjaxCodes</span>
+          this is a message
+          <span className="chatTimestamp">{new Date().toUTCString()}</span>
+        </p>
+
+        <p className="chatMessage chatReciever">
+          <span className="chatName ">SteveDave</span>
+          this is a message
+          <span className="chatTimestamp">{new Date().toUTCString()}</span>
+        </p>
       </div>
     </div>
   );

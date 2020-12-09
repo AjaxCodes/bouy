@@ -7,12 +7,10 @@
 .sidebarChat:hover {
   background-color: #1f00df;
 }
-.sidebarChatInfo > h2{
+.sidebarChatInfo > h2 {
   font-size: 14px;
   margin-bottom: 8px;
 }
-.sidebarChat{
-    margin-left: 20px;
+.sidebarChat {
+  margin-left: 20px;
 }
-
-

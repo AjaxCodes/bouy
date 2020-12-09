@@ -1,24 +1,24 @@
-.sidebar{
-    display: flex;
-    flex-direction: column;
-    flex: 0.35;
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex: 0.35;
 }
 
-.sidebarHeader{
-    display: flex;
-    justify-content: space-between;
-    padding: 25px;
-    border-right: 2px solid #1f00df;
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  border-right: 2px solid #1f00df;
 }
 
-.sidebarHeaderRight{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-width: 10vw;
+.sidebarHeaderRight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 10vw;
 }
 
-.sidebarHeaderRight > .MuiSvgIcon-root{
-    margin-right: 2vw;
-    font-size: 24px !important;
+.sidebarHeaderRight > .MuiSvgIcon-root {
+  margin-right: 2vw;
+  font-size: 24px !important;
 }

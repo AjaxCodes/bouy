@@ -1,44 +1,44 @@
-.app{
-    display: grid;
-    place-items: center;
-    height: 100vh;
-    background-color:beige;
+.app {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: beige;
 }
 
-.appBody{
-    display: flex;
-    background-color: #ffb735;
-    margin-top: -50px;
-    height: 90vh;
-    width: 90vh;
-    box-shadow: -1px 4px 20px -6px #1f00df;
-    opacity: 70%;
+.appBody {
+  display: flex;
+  background-color: #ffb735;
+  margin-top: -50px;
+  height: 90vh;
+  width: 90vh;
+  box-shadow: -1px 4px 20px -6px #1f00df;
+  opacity: 70%;
 }
 
-.sidebarSearch{
-    display: flex;
-    align-items: center;
-    background-color:#ffb735;
-    height: 35px;
-    padding: 10px;
+.sidebarSearch {
+  display: flex;
+  align-items: center;
+  background-color: #ffb735;
+  height: 35px;
+  padding: 10px;
 }
 
-.searchContainer{
-    display: flex;
-    align-items: center;
-    background-color: #1f00df;
-    width: 100%;
-    height: 35px;
-    border-radius: 25px;
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: #1f00df;
+  width: 100%;
+  height: 35px;
+  border-radius: 25px;
 }
-.searchContainer > .MuiSvgIcon-root{
-    color: #ffb735;
-    padding: 10px;
+.searchContainer > .MuiSvgIcon-root {
+  color: #ffb735;
+  padding: 10px;
 }
 
-.searchContainer > input{
-    width: 230px;
-    border: none;
-    margin-left: 10px;
-    outline-width: 0;
+.searchContainer > input {
+  width: 230px;
+  border: none;
+  margin-left: 10px;
+  outline-width: 0;
 }
