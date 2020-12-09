@@ -1,9 +1,7 @@
 import React from "react";
 import "../Components/Chat.css";
 import bouycut from "../Images/bouycut.png";
-import FindReplaceIcon from "@material-ui/icons/FindReplace";
 import { IconButton } from "@material-ui/core";
-import AttachmentIcon from "@material-ui/icons/Attachment";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 function Chat() {
@@ -17,19 +15,12 @@ function Chat() {
         </div>
         <div className="chatHeaderRight">
           <IconButton>
-            <FindReplaceIcon />
-          </IconButton>
-          <IconButton>
-            <AttachmentIcon />
-          </IconButton>
-          <IconButton>
             <MoreVertIcon />
           </IconButton>
         </div>
       </div>
       <div className="chatBody">
-       
-      <p className="chatMessage">
+        <p className="chatMessage">
           <span className="chatName">AjaxCodes</span>
           this is a message
           <span className="chatTimestamp">{new Date().toUTCString()}</span>
@@ -40,6 +31,12 @@ function Chat() {
           this is a message
           <span className="chatTimestamp">{new Date().toUTCString()}</span>
         </p>
+      </div>
+      <div className="chatFooter">
+        <form>
+          <input placeholder="Type a message" type="text" />
+          <button type="submit"> Send a message </button>
+        </form>
       </div>
     </div>
   );

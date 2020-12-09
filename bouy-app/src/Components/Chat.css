@@ -33,30 +33,47 @@
   font-weight: 600 solid black;
   background-position: center;
 }
-.chatMessage{
-    position: relative;
-    font-size: 16px;
-    padding: 10px;
-    width: fit-content;
-    border-radius: 20px;
-    background-color: pink;
-    margin-bottom: 30px;
-    opacity: 70%;
-
+.chatMessage {
+  position: relative;
+  font-size: 16px;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 20px;
+  background-color: pink;
+  margin-bottom: 30px;
+  opacity: 70%;
 }
-.chatReciever{
-    margin-left: auto;
-    background-color:#ffb735;
+.chatReciever {
+  margin-left: auto;
+  background-color: #ffb735;
 }
-.chatTimestamp{
-    margin-left: 10px;
-    font-size: x-small;
+.chatTimestamp {
+  margin-left: 10px;
+  font-size: x-small;
 }
-.chatName{
-    position: absolute;
-    top: -15px;
-    font-weight: 800;
-    font-size: medium;
-    color: black;
+.chatName {
+  position: absolute;
+  top: -15px;
+  font-weight: 800;
+  font-size: medium;
+  color: black;
 }
-
+.chatFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  border-top: 2px solid #1f00df;
+}
+.chatFooter > form {
+  flex: 1;
+  display: flex;
+}
+.chatFooter > form > input {
+  flex: 1;
+  border-radius: 20px;
+  border: none;
+}
+.chatFooter > form >  button {
+  display: none;
+}
