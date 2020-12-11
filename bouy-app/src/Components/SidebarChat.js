@@ -4,7 +4,7 @@ import "../Components/SidebarChat.css";
 function SidebarChat() {
   return (
     <div className="sidebarChat">
-      <div classname="sidebarChatInfo">
+      <div className="sidebarChatInfo">
         <h2> Room Name </h2>
         <p>last message sent </p>
       </div>

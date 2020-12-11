@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Components/Chat.css";
 import bouycut from "../Images/bouycut.png";
 import { IconButton } from "@material-ui/core";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import axios from "../axios";
 
-function Chat() {
+function Chat({ messages }) {
+  const [input, setInput] = useState("");
+
+  const sendMessage = async (e) => {
+    e.preventDefault();
+
+    await axios.post("/messages/new", {
+      message: input,
+      name: "",
+      timestamp: "dt",
+      recieved: false,
+    });
+
+    setInput("");
+  };
+
   return (
     <div className="chat">
       <div className="chatHeader">
@@ -20,22 +36,27 @@ function Chat() {
         </div>
       </div>
       <div className="chatBody">
-        <p className="chatMessage">
-          <span className="chatName">AjaxCodes</span>
-          this is a message
-          <span className="chatTimestamp">{new Date().toUTCString()}</span>
-        </p>
-
-        <p className="chatMessage chatReciever">
-          <span className="chatName ">SteveDave</span>
-          this is a message
-          <span className="chatTimestamp">{new Date().toUTCString()}</span>
-        </p>
+        {messages.map((message) => (
+          <p className={`chatMessage ${message.recieved && "chatReciever"}`}>
+            <span className="chatName">{message.name}</span>
+            {message.message}
+            <span className="chatTimestamp">{message.timestamp}</span>
+          </p>
+        ))}
       </div>
+
       <div className="chatFooter">
         <form>
-          <input placeholder="Type a message" type="text" />
-          <button type="submit"> Send a message </button>
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Type a message"
+            type="text"
+          />
+          <button onClick={sendMessage} type="submit">
+            {" "}
+            Send a message{" "}
+          </button>
         </form>
       </div>
     </div>
