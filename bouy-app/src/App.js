@@ -3,7 +3,7 @@ import Sidebar from "./Components/Sidebar";
 import Chat from "./Components/Chat";
 import "./App.css";
 import Pusher from "pusher-js";
-import axios from "axios";
+import axios from "./axios";
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -43,3 +43,17 @@ function App() {
 }
 
 export default App;
+
+
+
+import mongoose from 'mongoose';
+
+const messagesSchema = mongoose.Schema({
+    message: String,
+    name: String,
+    timestamp: String,
+    received: Boolean
+    
+});
+
+export default mongoose.model('messagecontents',messagesSchema);
