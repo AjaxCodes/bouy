@@ -14,11 +14,11 @@ function Chat({ messages }) {
     await axios.post("/messages/new", {
       message: input,
       name: "",
-      timestamp: "dt",
+      timestamp: "5 O'clock... somewhere`",
       recieved: false,
     });
 
-    setInput("");
+    setInput(""); 
   };
 
   return (

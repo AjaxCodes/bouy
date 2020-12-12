@@ -5,7 +5,7 @@ import "./App.css";
 import Pusher from "pusher-js";
 import axios from "./axios";
 
-function App() {
+function ChatPage() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ function App() {
   );
 }
 
-export default App;
+export default ChatPage;
 
 
 
