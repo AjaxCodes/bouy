@@ -53,13 +53,13 @@
 }
 .chatName {
   position: absolute;
-  top: -15px;
+  top: -20px;
   font-weight: 800;
   font-size: medium;
   color: black;
 }
 .chatFooter {
-  display: flex;
+  display: flex; 
   justify-content: space-between;
   align-items: center;
   height: 50px;

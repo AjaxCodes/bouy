@@ -14,3 +14,9 @@
 .sidebarChatInfo {
   margin-left: 15px;
 }
+.sidebarChatNew{
+  display: flex;
+  padding: 25px;
+  cursor: pointer;
+
+}
