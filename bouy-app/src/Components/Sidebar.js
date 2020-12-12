@@ -1,14 +1,15 @@
 import React from "react";
 import "../Components/Sidebar.css";
-import PersonIcon from "@material-ui/icons/Person";
 import FindReplaceIcon from "@material-ui/icons/FindReplace";
 import SidebarChat from "../Components/SidebarChat";
+import AccountBoxIcon from "@material-ui/icons/AccountBox";
+
 
 function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebarHeader">
-        <PersonIcon />
+        <AccountBoxIcon />
         <div className="sidebarHeaderRight">
           
         </div>
@@ -20,7 +21,7 @@ function Sidebar() {
         </div>
       </div>
       <div className="sidebarChats">
-        <SidebarChat />
+        <SidebarChat addNewChat/>
         <SidebarChat />
         <SidebarChat />
         <SidebarChat />
