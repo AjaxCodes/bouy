@@ -1,48 +1,43 @@
-import React, { useEffect, useState } from "react";
-import Sidebar from "./Components/Sidebar";
-import Chat from "./Components/Chat";
-import "./App.css";
-import Pusher from "pusher-js";
-import axios from "./axios";
+import React from 'react';
+import { Router } from "@reach/router";
+import Basket from "./Pages/Basket";
+import ProfilePage from "./Pages/ProfilePage";
+import PayWindow from "./Pages/PayWindow";
+import CivResource from "./Pages/CivResource";
+import LandingPage from "./Pages/LandingPage";
+import ChatPage from "./Pages/ChatPage";
+import VetResource from "./Pages/VetResource";
+import SignUpPage from "./Pages/SignUpPage";
+import FrResource from "./Pages/FrResourse";
+import StoreFront from "./Pages/StoreFront";
 
-function ChatPage() {
-  const [messages, setMessages] = useState([]);
 
-  useEffect(() => {
-    axios.get("/messages/sync").then((response) => {
-      setMessages(response.data);
-    });
-  }, []);
 
-  useEffect(() => {
-    const pusher = new Pusher("f388c71f5112930a165b", {
-      cluster: "us2",
-    });
 
-    const channel = pusher.subscribe("messages");
-    channel.bind("inserted", (newMessage) => {
-      setMessages([...messages, newMessage]);
-    });
-
-    return () => {
-      channel.unbind_all();
-      channel.unsubscribe();
-    };
-  }, [messages]);
-
-  console.log(messages);
-
+function App() {
   return (
-    <div className="app">
-      <div className="appBody">
-        <Sidebar />
-        <Chat messages={messages}/>
-      </div>
+    <div>
+       <Router>
+        <LandingPage path="/home" /> 
+        <CivResource path="/resource-civ" />
+        <FrResource path="/resource-fr" />
+        <VetResource path="/resource-vet" />
+        <SignUpPage path="/signUp" />
+        <ProfilePage path="/profile" />
+        <ChatPage path="/chat" />
+        <StoreFront path="/store" />
+        <Basket path="/basket" />
+        <PayWindow path="/pay" />
+      </Router>
+    
+
+      
     </div>
-  );
+  )
 }
 
-export default ChatPage;
+export default App;
+
 
 
 
