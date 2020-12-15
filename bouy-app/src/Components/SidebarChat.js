@@ -7,6 +7,7 @@ import AddIcon from "@material-ui/icons/Add";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import db from "../Firebase";
 
+
 function SidebarChat() {
   const [channels, setChannels] = useState([]);
 
@@ -23,19 +24,7 @@ function SidebarChat() {
     );
     
   }, []);
-   const createRoom = () =>{
-     const roomName = prompt('please enter the name of the new room')
-
-     if(roomName){
-       db.collection('rooms').add({
-         name: roomName,
-
-       });
-
-     }
-
-  
-   };
+   
     
   
 
@@ -54,7 +43,7 @@ function SidebarChat() {
 
       <SidebarPanel Icon={ExpandMoreIcon} title="Chats" />
       <hr />
-      <SidebarPanel onClick={createRoom} Icon={AddIcon} title="Rooms" />
+      <SidebarPanel  addChannelOption Icon={AddIcon} title="Add channel" />
   
       <hr />
       {channels.map((channel) => (

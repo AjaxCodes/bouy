@@ -1,0 +1,8 @@
+body{
+  overflow: hidden;
+}
+.chatBody{
+
+  display: flex;
+  height: 100vh;
+}
