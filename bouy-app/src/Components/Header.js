@@ -26,7 +26,7 @@ function Header() {
           </Link>
         </MenuItem>
         <MenuItem>
-          <Link to="/resource-Vet">
+          <Link to="/resource-vet">
             <PolicyIcon />
           </Link>
         </MenuItem>

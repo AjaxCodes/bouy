@@ -5,7 +5,7 @@ import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import AddIcon from "@material-ui/icons/Add";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import db from "../Firebase";
+import db from "../firebase";
 
 
 function SidebarChat() {
