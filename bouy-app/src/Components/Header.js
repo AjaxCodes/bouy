@@ -11,11 +11,13 @@ import PersonIcon from "@material-ui/icons/Person";
 function Header() {
   return (
     <div className="header">
-      <img src={bouycut} alt="logo" />
+      <div className="headerLogo">
+        <img src={bouycut} alt="logo" />
+      </div>
       <div className="headerRight">
         <MenuItem>
           <Link to="/home">
-        <MoodBadIcon />
+            <MoodBadIcon />
           </Link>
         </MenuItem>
         <MenuItem>

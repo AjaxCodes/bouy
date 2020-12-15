@@ -1,0 +1,25 @@
+.sidebarPanel {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  padding-left: 2px;
+  cursor: pointer;
+  background-color:#1f00df;
+  color: #ffb735;
+}
+.sidebarPanel:hover {
+  background-color: white;
+}
+.sidebarPanelIcon {
+  padding: 10px;
+  font-size: 15px !important;
+}
+.sidebarPanelChannel {
+  padding: 10px;
+}
+.sidebarPanelHash {
+  padding: 10px;
+}
+.sidebarPanel > h3 {
+    font-weight: 500;
+}
