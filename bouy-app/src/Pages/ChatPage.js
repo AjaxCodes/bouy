@@ -9,7 +9,7 @@ function ChatPage() {
   
 
   return (
-    <div >
+    <div className="chat">
       <Header/>
       <div className="chatBody">
         <SidebarChat/>
