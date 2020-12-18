@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Chat.css";
+import Message from "./Message";
 import { useParams } from "react-router-dom";
 import db from "../firebase";
-import Message from "./Message"
+import DonutSmallIcon from "@material-ui/icons/DonutSmall";
 
 function Chat() {
   const { roomId } = useParams();
@@ -15,38 +16,41 @@ function Chat() {
         .doc(roomId)
         .onSnapshot((snapshot) => setRoomDetails(snapshot.data()));
     }
+
     db.collection("rooms")
       .doc(roomId)
       .collection("messages")
-      .orderBy("timeStamp", "asc")
+      .orderBy("timestamp", "asc")
       .onSnapshot((snapshot) =>
         setRoomMessages(snapshot.docs.map((doc) => doc.data()))
       );
   }, [roomId]);
   console.log(roomDetails);
-  console.log("Messages", roomMessages);
+  console.log(roomMessages);
 
   return (
-    <div classname="chat">
-      <h2>you are in the {roomId} room</h2>
+    <div className="chat">
       <div className="chatHeader">
         <div className="chatHeaderLeft">
-          <h4 classname="channelName">
-            <strong> #{roomDetails?.name} </strong>
+          <h4 className="chatChannelName">
+            <strong>
+              <DonutSmallIcon />
+              {roomDetails?.name}
+            </strong>
           </h4>
         </div>
+        <div></div>
       </div>
-      <div classname="chatMessages">
-        {roomMessages.map(({message, timestamp, user, userImage}) =>
-          <Message 
-          message={message}
-          timestamp={timestamp}
-          user={user}
-          userImage={userImage}
-          />
-          
-          )}
 
+      <div className="ChatMessages">
+        {roomMessages.map(({ message, timestamp, user, userImage }) => (
+          <Message
+            message={message}
+            timestamp={timestamp}
+            user={user}
+            userImage={userImage}
+          />
+        ))}
       </div>
     </div>
   );

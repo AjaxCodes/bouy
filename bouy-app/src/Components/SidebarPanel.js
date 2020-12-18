@@ -1,16 +1,17 @@
 import React from "react";
 import "./SidebarPanel.css";
+import DonutSmallIcon from "@material-ui/icons/DonutSmall";
 import { useHistory } from "react-router-dom";
 import db from "../firebase";
 
-function SidebarPanel({ Icon, title, id, addChannelOption }) {
+function SidebarPanel({ Icon, title, addChannelOption, id }) {
   const history = useHistory();
 
   const selectChannel = () => {
     if (id) {
-      history.push(`/rooms/${id}`);
+      history.push(`/room/${id}`);
     } else {
-      history.push(title);
+      history.push("title");
     }
   };
 
@@ -29,12 +30,14 @@ function SidebarPanel({ Icon, title, id, addChannelOption }) {
       className="sidebarPanel"
       onClick={addChannelOption ? addChannel : selectChannel}
     >
-      {Icon && <Icon className=" sidebarPanelIcon" />}
+      {Icon && <Icon className="SidebarPanelIcon" />}
       {Icon ? (
-        <h3> {title}</h3>
+        <h3>{title}</h3>
       ) : (
-        <h3 className="sidebarPanelChannel">
-          <span className="sidebarPanelHash">#{title}</span>
+        <h3 className="sidebarPanelChanel">
+          <span className="SideBarPanelStar">
+            <DonutSmallIcon /> {title}{" "}
+          </span>
         </h3>
       )}
     </div>

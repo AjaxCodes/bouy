@@ -1,25 +1,24 @@
 import React from "react";
-import Chat from "../Components/Chat";
-import "../chatpage.css";
-import Header from "../Components/Header";
-import SidebarChat from "../Components/SidebarChat";
+import "./chatPage.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Header from "../Components/Header";
+import Sidebar from "../Components/Sidebar";
+import Chat from "../Components/Chat";
 
 function ChatPage() {
   return (
     <div className="chatPage">
       <Router>
         <Header />
-        <div className="chatBody">
-          <SidebarChat />
+        <div className="chatPageBody">
+          <Sidebar />
           <Switch>
-            <Route path="/rooms/:room.id">
-            <h1>welcome chat</h1>
+            <Route path="/room/:roomId">
               <Chat />
             </Route>
-            <Route path="/chat">
+            <Route path="/">
               <h1>welcome</h1>
-          </Route>
+            </Route>
           </Switch>
         </div>
       </Router>

@@ -18,7 +18,7 @@ function App() {
   return (
     <div>
        <Router>
-        <LandingPage path="/home" /> 
+        <LandingPage path="/" /> 
         <CivResource path="/resource-civ" />
         <FrResource path="/resource-fr" />
         <VetResource path="/resource-vet" />

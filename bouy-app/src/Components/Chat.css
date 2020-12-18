@@ -1,17 +1,19 @@
-.chat {
-  flex: 0.8;
+.chat{
+  flex: 0.7;
   flex-grow: 1;
   overflow-y: scroll;
   padding-bottom: 150px;
 }
-.chatHeader {
+.chatHeader{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  border-bottom: 1px solid #ffb735;
+  border-bottom: 2px solid #ffb735;
+
 }
-.channelName {
+.chatChannelName{
   display: flex;
   text-transform: lowercase;
 }
+

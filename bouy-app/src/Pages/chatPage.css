@@ -1,0 +1,7 @@
+body {
+    overflow: hidden;
+  }
+  .chatPageBody {
+    display: flex;
+    height: 100vh;
+  }
