@@ -2,7 +2,7 @@ import React from "react";
 import MenuItem from "@material-ui/core/MenuItem";
 import { Link } from "@reach/router";
 import bouycut from "../Images/bouycut.png";
-import "../Components/Header.css";
+import "./Header.css";
 import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
 import MoodBadIcon from "@material-ui/icons/MoodBad";
 import PolicyIcon from "@material-ui/icons/Policy";
@@ -42,11 +42,14 @@ function Header() {
         </MenuItem>
       </div>
       <div className="headerLeft">
-        
         <MenuItem>
           <Link to="/store">StoreFront</Link>
         </MenuItem>
-      </div>
+       
+      
+
+        </div>
+        
     </div>
   );
 }

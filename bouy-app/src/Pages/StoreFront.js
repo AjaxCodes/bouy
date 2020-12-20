@@ -1,12 +1,19 @@
 import React from 'react';
-import Header from '../Components/Header';
+import Header from "../Components/Header";
+import Store from "../Components/Store";
+import Cart from "../Components/Cart";
 import "./StoreFront.css";
 
 function StoreFront() {
     return (
-        <div>
-            <Header/>
-            <h1> storefront </h1>
+        <div className="storefront">
+           <Header/>
+           <Cart/>
+           <Store/>
+
+          
+            
+            
         </div>
     )
 }
