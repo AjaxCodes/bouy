@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Chat.css";
 import Message from "./Message";
+import ChatInput from "./ChatInput";
 import { useParams } from "react-router-dom";
 import db from "../firebase";
 import DonutSmallIcon from "@material-ui/icons/DonutSmall";
@@ -52,6 +53,7 @@ function Chat() {
           />
         ))}
       </div>
+      <ChatInput channelName={roomDetails?.name} channelId={''}/>
     </div>
   );
 }

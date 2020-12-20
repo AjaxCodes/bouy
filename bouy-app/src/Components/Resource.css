@@ -1,0 +1,14 @@
+.resource {
+    height: 100vh;
+    background-color: #f8f8f8;
+    display: grid;
+    place-items: center;
+}
+
+.resourceContainer {
+  padding: 100px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px #ffb735, 0 1px 2px #1f00fb;
+}

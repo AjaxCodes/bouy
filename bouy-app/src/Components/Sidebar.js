@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import "./Sidebar.css";
 import SidebarPanel from "./SidebarPanel";
 import db from "../firebase";
-
-import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
+import { useStateValue } from "../StateProvider";
 import AddBoxIcon from "@material-ui/icons/AddBox";
-
+import { Avatar } from "@material-ui/core";
 
 function Sidebar() {
   const [channels, setChannels] = useState([]);
+  const [{ user }] = useStateValue();
 
   useEffect(() => {
     db.collection("rooms").onSnapshot((snapshot) =>
@@ -25,11 +25,8 @@ function Sidebar() {
     <div className="sidebar">
       <div className="sidebarHeader">
         <div className="sidebarInfo">
-          <h2>AjaxCodes - Bouy</h2>
-          <h3>
-            <FiberManualRecordIcon />
-            user
-          </h3>
+          <Avatar alt="" src={user?.photoURL} />
+          <h3> {user?.displayName}</h3>
         </div>
       </div>
       <SidebarPanel Icon={AddBoxIcon} addChannelOption title="Add New Chats" />

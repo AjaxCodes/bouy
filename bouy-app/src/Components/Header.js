@@ -38,15 +38,13 @@ function Header() {
       </div>
       <div className="headerCenter">
         <MenuItem>
-          <Link to="/signUp">Sign In</Link>
+          <Link to="/chat">Chat</Link>
         </MenuItem>
       </div>
       <div className="headerLeft">
+        
         <MenuItem>
           <Link to="/store">StoreFront</Link>
-        </MenuItem>
-        <MenuItem>
-          <Link to="/chat">Chat</Link>
         </MenuItem>
       </div>
     </div>
