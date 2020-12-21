@@ -7,6 +7,7 @@ import ChatPage from "./Pages/ChatPage";
 import VetResource from "./Pages/VetResource";
 import FrResource from "./Pages/FrResourse";
 import StoreFront from "./Pages/StoreFront";
+import Checkout from "./Components/Checkout";
 
 
 
@@ -16,14 +17,14 @@ function App() {
   return (
     <div>
        <Router>
-        <LandingPage path="/" /> 
+        <LandingPage path="/home" /> 
         <CivResource path="/resource-civ" />
         <FrResource path="/resource-fr" />
         <VetResource path="/resource-vet" />
        
         <ChatPage path="/chat" />
         <StoreFront path="/store" />
-       
+       <Checkout path="checkout"/>
         
       </Router>
     

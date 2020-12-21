@@ -16,7 +16,7 @@ function Header() {
       </div>
       <div className="headerRight">
         <MenuItem>
-          <Link to="/">
+          <Link to="/home">
             <MoodBadIcon />
           </Link>
         </MenuItem>

@@ -1,7 +1,7 @@
 .product {
   display: flex;
   flex-direction: column;
-  background-color: #ffb735;
+  background-color: burlywood;
   z-index: 1;
   align-items: center;
   justify-content: flex-end;
@@ -11,6 +11,10 @@
   max-height: 400px;
   min-width: 100px;
   border-radius: 30px;
+}
+.productRating{
+    display: flex;
+    
 }
 .product > img {
   max-width: 200px;
@@ -31,5 +35,6 @@
 }
 .productInfo {
   height: 40px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+  padding-bottom: 60px;
 }
