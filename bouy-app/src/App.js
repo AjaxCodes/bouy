@@ -9,6 +9,7 @@ import FrResource from "./Pages/FrResourse";
 import StoreFront from "./Pages/StoreFront";
 import Checkout from "./Components/Checkout";
 import SignIn from "./Pages/SignIn";
+import Payment from "./Components/Payment";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         <ChatPage path="/chat" />
         <StoreFront path="/store" />
         <SignIn path="/signIn" />
-        <Checkout path="checkout" />
+        <Checkout path="/checkout" />
+        <Payment path="/payment"/>
       </Router>
     </div>
   );
