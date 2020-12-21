@@ -7,6 +7,9 @@ import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
 import MoodBadIcon from "@material-ui/icons/MoodBad";
 import PolicyIcon from "@material-ui/icons/Policy";
 import PersonIcon from "@material-ui/icons/Person";
+import VpnKeyIcon from "@material-ui/icons/VpnKey";
+import StoreIcon from "@material-ui/icons/Store";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 function Header() {
   return (
@@ -45,11 +48,18 @@ function Header() {
         <MenuItem>
           <Link to="/store">StoreFront</Link>
         </MenuItem>
-       
-      
-
-        </div>
-        
+        <MenuItem>
+          <Link to="/signIn">
+            <StoreIcon />
+            <VpnKeyIcon />
+          </Link>
+        </MenuItem>
+        <MenuItem>
+          <Link to="/checkout">
+            <ShoppingCartIcon />
+          </Link>
+        </MenuItem>
+      </div>
     </div>
   );
 }

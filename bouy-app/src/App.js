@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Router } from "@reach/router";
 
 import CivResource from "./Pages/CivResource";
@@ -8,36 +8,23 @@ import VetResource from "./Pages/VetResource";
 import FrResource from "./Pages/FrResourse";
 import StoreFront from "./Pages/StoreFront";
 import Checkout from "./Components/Checkout";
-
-
-
-
+import SignIn from "./Pages/SignIn";
 
 function App() {
   return (
     <div>
-       <Router>
-        <LandingPage path="/home" /> 
+      <Router>
+        <LandingPage path="/home" />
         <CivResource path="/resource-civ" />
         <FrResource path="/resource-fr" />
         <VetResource path="/resource-vet" />
-       
         <ChatPage path="/chat" />
         <StoreFront path="/store" />
-       <Checkout path="checkout"/>
-        
+        <SignIn path="/signIn" />
+        <Checkout path="checkout" />
       </Router>
-    
-
-      
     </div>
-  )
+  );
 }
 
 export default App;
-
-
-
-
-
-
