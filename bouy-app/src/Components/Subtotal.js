@@ -8,7 +8,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 import { Link } from "@reach/router";
 
 
-
 function Subtotal() {
     
   const [{ basket }, dispatch] = useStateValue();
@@ -35,6 +34,8 @@ function Subtotal() {
             <PaymentIcon /> Pay Now
           </Link>
         </MenuItem>
+    
+        
     </div>
   );
 }

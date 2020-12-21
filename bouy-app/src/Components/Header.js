@@ -11,6 +11,9 @@ import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import StoreIcon from "@material-ui/icons/Store";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
+
+
+
 function Header() {
   return (
     <div className="header">
@@ -59,8 +62,6 @@ function Header() {
             <ShoppingCartIcon />
           </Link>
         </MenuItem>
-       
-        
 
       </div>
     </div>
