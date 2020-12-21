@@ -29,7 +29,7 @@ function Checkout() {
         </div>
         <div classname="checkoutRight">
             <Subtotal/>
-          <h3> Your total is $40</h3>
+         
         </div>
       </div>
     </div>

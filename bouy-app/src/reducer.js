@@ -1,5 +1,6 @@
 export const initialState = {
   user: null,
+  basket: [],
 };
 
 export const actionTypes = {
@@ -15,8 +16,24 @@ const reducer = (state, action) => {
         ...state,
         user: action.user,
       };
-    default:
+    case 'ADD_TO_BASKET':
+        return{
+          ...state,
+          basket:[...state.basket, action.item],
+        }
+        default:
       return state;
   }
+  
+
 };
+
+
+
+
+
+
+
+
+
 export default reducer;
