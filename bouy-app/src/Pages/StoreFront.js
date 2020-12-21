@@ -7,6 +7,7 @@ function StoreFront() {
   return (
     <div className="storefront">
       <Header />
+      <h4> payment is live you will not recieve any product, this is a class project</h4>
       
       <Store />
 
