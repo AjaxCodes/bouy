@@ -1,9 +1,9 @@
  .checkout{
     display: flex;
-    background-color:#1f00df;
+    background-color:white;
     padding: 10px;
     height: max-content;
-   color: white;
+   color: black;
 
 }
 .checkoutTitle{

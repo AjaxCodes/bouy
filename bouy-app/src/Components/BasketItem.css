@@ -1,0 +1,47 @@
+
+.basketItem{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.basketItemInfo{
+    padding-left: 20px;
+
+
+}
+.basketItemInfo > button{
+    background: #ffb735;
+    border: 1px solid;
+    margin-top: 10px;
+    border-color: #1f00df;
+    color: black;
+    border-radius: 15px;
+
+    
+
+}
+
+.basketItemImage{
+    object-fit: contain;
+    width: 180px;
+    height: 180px;
+
+}
+
+
+
+.basketItemTitle{
+    font-size: 17px;
+    font-weight: 800;
+
+}
+
+.basketItemPrice{
+
+}
+
+.basketItemRating{
+    display: flex;
+
+
+}
