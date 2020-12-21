@@ -1,11 +1,21 @@
 import React from "react";
 import "./BasketItem.css";
 import StarIcon from "@material-ui/icons/Star";
+import { useStateValue } from "../StateProvider";
 
-function BasketItem({id, title, image, price, rating }) {
+function BasketItem({ id, title, image, price, rating }) {
+  const [{ basket }, dispatch] = useStateValue();
+
+  const removeFromBasket = () => {
+    dispatch({
+      type: "REMOVE_FROM_BASKET",
+      id: id,
+    });
+  };
+
   return (
     <div classname="basketItem">
-      <img classname="basketItemImage" src={image} alt=""/>
+      <img classname="basketItemImage" src={image} alt="" />
       <div className="basketItemInfo">
         <p className="basketItemTitle">{title}</p>
         <p classname="basketItemPrice">
@@ -19,7 +29,7 @@ function BasketItem({id, title, image, price, rating }) {
               <StarIcon />
             ))}
         </div>
-        <button>Remove from cart</button>
+        <button onClick={removeFromBasket}>Remove from cart</button>
       </div>
     </div>
   );
