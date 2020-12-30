@@ -1,70 +1,75 @@
 import React from "react";
-import MenuItem from "@material-ui/core/MenuItem";
-import { Link } from "@reach/router";
-import bouycut from "../Images/bouycut.png";
 import "./Header.css";
+import bouycut from "../Images/bouycut.png";
 import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
 import MoodBadIcon from "@material-ui/icons/MoodBad";
 import PolicyIcon from "@material-ui/icons/Policy";
 import PersonIcon from "@material-ui/icons/Person";
-import VpnKeyIcon from "@material-ui/icons/VpnKey";
-import StoreIcon from "@material-ui/icons/Store";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-
-
-
+import ChatPage from "../Pages/ChatPage";
+import { Link } from "react-router-dom";
+import { useStateValue } from "../StateProvider";
+import { auth } from "../firebase";
 
 function Header() {
+  const [{ basket, user }, dispatch] = useStateValue();
+
+  const handleAuthentification = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
+
   return (
     <div className="header">
       <div className="headerLogo">
         <img src={bouycut} alt="logo" />
       </div>
-      <div className="headerRight">
-        <MenuItem>
-          <Link to="/home">
-            <MoodBadIcon />
-          </Link>
-        </MenuItem>
-        <MenuItem>
-          <Link to="/resource-civ">
+      <div className="headerIcons">
+        <Link to="/">
+          <MoodBadIcon />
+        </Link>
+        <Link to="/civ">
+          <div className="headerIcons">
             <PersonIcon />
-          </Link>
-        </MenuItem>
-        <MenuItem>
-          <Link to="/resource-vet">
+          </div>
+        </Link>
+        <Link to="/vet">
+          <div className="headerIcons">
             <PolicyIcon />
-          </Link>
-        </MenuItem>
-        <MenuItem>
-          <Link to="/resource-fr">
+          </div>
+        </Link>
+        <Link to="/first">
+          <div className="headerIcons">
             <LocalHospitalIcon />
-          </Link>
-        </MenuItem>
+          </div>
+        </Link>
       </div>
-      <div className="headerCenter">
-        <MenuItem>
-          <Link to="/chat">Chat</Link>
-        </MenuItem>
-      </div>
+      <Link to="/chat">
+        <div className="headerCenter">
+          <h1>Chat</h1>
+        </div>
+      </Link>
       <div className="headerLeft">
-        <MenuItem>
-          <Link to="/store">StoreFront</Link>
-        </MenuItem>
-        <MenuItem>
-          <Link to="/signIn">
-            <StoreIcon />
-            <VpnKeyIcon />
-          </Link>
-        </MenuItem>
-        <MenuItem>
-          <Link to="/checkout">
-            <ShoppingCartIcon />
-          </Link>
-        </MenuItem>
+        <Link to="/store">
+          <h1>Storefront</h1>
+        </Link>
 
+        <Link to={!user && "/login"}>
+          <div onClick={handleAuthentification} className="headerLeft">
+            <h3>{user ? "Sign Out"  : "Sign In"}</h3>
+          </div>
+        </Link>
+
+        <Link to="/checkout">
+          <div className="headerLeft">
+            <ShoppingCartIcon />
+            {basket?.length}
+          </div>
+        </Link>
       </div>
     </div>
   );
 }
+
 export default Header;

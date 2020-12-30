@@ -1,20 +1,18 @@
 import React from "react";
 import "./Checkout.css";
-import Header from "./Header";
 import Subtotal from "./Subtotal";
 import { useStateValue } from "../StateProvider";
 import BasketItem from "./BasketItem";
 
 function Checkout() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user}, dispatch] = useStateValue();
 
   return (
     <div classname="check">
-      <Header />
-
       <div className="checkout">
         <div Classname="checkoutLeft">
           <div>
+              <h3> hello, {user?.email}</h3>
             <h2 className="checkoutTitle">Your Cart</h2>
             {basket.map((item) => (
               <BasketItem

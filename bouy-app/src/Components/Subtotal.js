@@ -1,15 +1,12 @@
-import React  from "react";
+import React from "react";
 import "./Subtotal.css";
 import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "../StateProvider";
 import { getBasketTotal } from "../reducer";
-import PaymentIcon from '@material-ui/icons/Payment';
-import MenuItem from "@material-ui/core/MenuItem";
-import { Link } from "@reach/router";
-
+import {  useHistory } from "react-router-dom";
 
 function Subtotal() {
-    
+    const history = useHistory();
   const [{ basket }, dispatch] = useStateValue();
 
   return (
@@ -29,15 +26,11 @@ function Subtotal() {
         thousandsSeparator={true}
         prefix={"$"}
       />
-      <MenuItem>
-          <Link to="/payment">
-            <PaymentIcon /> Pay Now
-          </Link>
-        </MenuItem>
-    
-        
+      <br/>
+    <button onClick={e => history.push('/payment')}>Pay Now</button>
     </div>
   );
+  
 }
 
 export default Subtotal;

@@ -1,40 +1,31 @@
-
-.basketItem{
+.basketItem {
     display: flex;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
-}
-.basketItemInfo{
+  }
+  .basketItemInfo {
     padding-top: 10px;
     padding-left: 20px;
     padding-bottom: 10px;
-
-
-}
-.basketItemInfo > button{
+  }
+  .basketItemInfo > button {
     background: #ffb735;
     border: 1px solid;
     margin-top: 10px;
     border-color: #1f00df;
     color: black;
     border-radius: 15px;
-
-    
-
-}
-
-.basketItemImage{
+  }
+  
+  .basketItemImage {
+    padding: 30px;
     object-fit: contain;
     width: 180px;
     height: 180px;
-
-}
-
-
-
-.basketItemTitle{
+  }
+  
+  .basketItemTitle {
     font-size: 17px;
     font-weight: 800;
-
-}
-
+  }
+  

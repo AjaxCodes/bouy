@@ -9,8 +9,7 @@ import tWhiteorange from "../Images/tWhiteorange.png";
 function Store() {
   return (
     <div className="store">
-      <div classname="storeContainer"></div>
-      <div>
+      <div classname="storeContainer">
         <div className="storeRow">
           <Product
             id="348567"

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Resource.css";
 
-function Resourcevet() {
+function ResourceVet() {
   return (
     <div className="resource">
       <div className="resourceContainer">
@@ -34,4 +34,4 @@ function Resourcevet() {
   );
 }
 
-export default Resourcevet;
+export default ResourceVet;

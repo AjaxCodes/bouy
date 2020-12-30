@@ -1,7 +1,7 @@
 import React from "react";
 import "./Resource.css";
 
-function Resourcefr() {
+function ResourceFr() {
   return (
     <div className="resource">
       <div className="resourceContainer">
@@ -39,4 +39,4 @@ function Resourcefr() {
   );
 }
 
-export default Resourcefr;
+export default ResourceFr;

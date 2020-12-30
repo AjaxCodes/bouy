@@ -1,31 +1,88 @@
-import React from "react";
-import { Router } from "@reach/router";
-
-import CivResource from "./Pages/CivResource";
-import LandingPage from "./Pages/LandingPage";
-import ChatPage from "./Pages/ChatPage";
-import VetResource from "./Pages/VetResource";
-import FrResource from "./Pages/FrResourse";
-import StoreFront from "./Pages/StoreFront";
+import React, { useEffect } from "react";
+import "./App.css";
+import Header from "./Components/Header";
+import Store from "./Components/Store";
 import Checkout from "./Components/Checkout";
-import SignIn from "./Pages/SignIn";
+import ResourceCiv from "./Components/ResourceCiv";
+import ResourceVet from "./Components/ResourceVet";
+import Resource from "./Components/Resource";
+import ResourceFr from "./Components/ResourceFr";
+import StoreLogin from "./Components/StoreLogin";
 import Payment from "./Components/Payment";
+import ChatPage from "./Pages/ChatPage";
+import { auth } from "./firebase";
+import { useStateValue } from "./StateProvider";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
+  const [{}, dispatch] = useStateValue();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      console.log("USER SIGNED IN", authUser);
+
+      if (authUser) {
+        dispatch({
+          type: "SET_USER",
+          user: authUser,
+        });
+      } else {
+        dispatch({
+          type: "SET_USER",
+          user: null,
+        });
+      }
+    });
+  }, []);
+
   return (
-    <div>
-      <Router>
-        <LandingPage path="/home" />
-        <CivResource path="/resource-civ" />
-        <FrResource path="/resource-fr" />
-        <VetResource path="/resource-vet" />
-        <ChatPage path="/chat" />
-        <StoreFront path="/store" />
-        <SignIn path="/signIn" />
-        <Checkout path="/checkout" />
-        <Payment path="/payment"/>
-      </Router>
-    </div>
+    <Router>
+      <div className="app">
+        <Switch>
+          <Route path="/civ">
+            <Header />
+            <ResourceCiv />
+          </Route>
+
+          <Route path="/vet">
+            <Header />
+            <ResourceVet />
+          </Route>
+
+          <Route path="/first">
+            <Header />
+            <ResourceFr />
+          </Route>
+
+          <Route path="/chat">
+           
+            <ChatPage/>
+          </Route>
+
+          <Route path="/store">
+            <Header />
+            <Store />
+          </Route>
+          <Route path="/login">
+            <StoreLogin />
+          </Route>
+
+          <Route path="/checkout">
+            <Header />
+            <Checkout />
+          </Route>
+
+          <Route path="/payment">
+            <Payment />
+          </Route>
+
+          <Route path="/">
+            <Header />
+            <Resource />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

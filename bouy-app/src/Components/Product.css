@@ -12,9 +12,8 @@
   min-width: 100px;
   border-radius: 30px;
 }
-.productRating{
-    display: flex;
-    
+.productRating {
+  display: flex;
 }
 .product > img {
   max-width: 200px;

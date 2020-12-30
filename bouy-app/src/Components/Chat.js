@@ -53,7 +53,7 @@ function Chat() {
           />
         ))}
       </div>
-      <ChatInput channelName={roomDetails?.name} channelId={''}/>
+      <ChatInput channelName={roomDetails?.name} channelId={'`${id}`'}/>
     </div>
   );
 }

@@ -1,14 +1,17 @@
-.checkout{
+.checkout {
     display: flex;
-    background-color:white;
-    padding: 10px;
+    background-color: white;
+    padding: 20px;
     height: max-content;
-   color: black;
-   overflow-y: scroll;
-
-}
-.checkoutTitle{
-    margin-right: 10px;
+    color: black;
+    overflow-y: scroll;
+  }
+  .checkoutTitle {
+    margin-right: 30px;
+    width: 1000px;
     padding: 10px;
     border-bottom: 2px solid #1f00df;
-}
+    padding-bottom: 10px;
+  }
+  
+  

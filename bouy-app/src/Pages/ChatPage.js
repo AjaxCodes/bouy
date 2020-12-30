@@ -25,7 +25,7 @@ function ChatPage() {
                 <Route path="/room/:roomId">
                   <Chat />
                 </Route>
-                <Route path="/">
+                <Route path="/chat">
                   <h1>welcome</h1>
                 </Route>
               </Switch>

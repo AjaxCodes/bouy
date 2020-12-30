@@ -1,7 +1,7 @@
 import React from "react";
 import "./Resource.css";
 
-function Resourceciv() {
+function ResourceCiv() {
   return (
     <div className="resource">
       <div className="resourceContainer">
@@ -43,4 +43,4 @@ function Resourceciv() {
   );
 }
 
-export default Resourceciv;
+export default ResourceCiv;
