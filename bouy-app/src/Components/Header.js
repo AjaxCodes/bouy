@@ -25,7 +25,7 @@ function Header() {
         <img src={bouycut} alt="logo" />
       </div>
       <div className="headerIcons">
-        <Link to="/">
+        <Link to="/home">
           <MoodBadIcon />
         </Link>
         <Link to="/civ">

@@ -9,6 +9,7 @@ import Resource from "./Components/Resource";
 import ResourceFr from "./Components/ResourceFr";
 import StoreLogin from "./Components/StoreLogin";
 import Payment from "./Components/Payment";
+import Orders from "./Components/Orders";
 import ChatPage from "./Pages/ChatPage";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
@@ -45,6 +46,11 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
+          <Route path="/home">
+            <Header />
+            <Resource />
+          </Route>
+
           <Route path="/civ">
             <Header />
             <ResourceCiv />
@@ -77,16 +83,18 @@ function App() {
             <Checkout />
           </Route>
 
+          <Route path="/orders">
+            <Header />
+            <Orders />
+          </Route>
+
           <Elements stripe={promise}>
             <Route path="/payment">
               <Payment />
             </Route>
           </Elements>
 
-          <Route path="/">
-            <Header />
-            <Resource />
-          </Route>
+          <Route path="/"></Route>
         </Switch>
       </div>
     </Router>

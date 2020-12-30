@@ -14,11 +14,11 @@ function BasketItem({ id, title, image, price, rating }) {
   };
 
   return (
-    <div classname="basketItem">
-      <img classname="basketItemImage" src={image} alt="" />
+    <div className="basketItem">
+      <img className="basketItemImage" src={image} alt="" />
       <div className="basketItemInfo">
         <p className="basketItemTitle">{title}</p>
-        <p classname="basketItemPrice">
+        <p className="basketItemPrice">
           <small>$</small>
           <strong>{price}</strong>
         </p>

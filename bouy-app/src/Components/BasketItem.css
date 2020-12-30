@@ -1,10 +1,11 @@
 .basketItem {
     display: flex;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ffb735;
   }
   .basketItemInfo {
-    padding-top: 10px;
+    padding-top: 30px;
     padding-left: 20px;
     padding-bottom: 10px;
   }
@@ -18,7 +19,7 @@
   }
   
   .basketItemImage {
-    padding: 30px;
+    padding: 10px;
     object-fit: contain;
     width: 180px;
     height: 180px;

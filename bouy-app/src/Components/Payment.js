@@ -3,13 +3,14 @@ import "./Payment.css";
 import { useStateValue } from "../StateProvider";
 import BasketItem from "./BasketItem";
 import CurrencyFormat from "react-currency-format";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { getBasketTotal } from "../reducer";
-import axios from "axios";
+import axios from "../axios";
 
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
+  const history = useHistory();
 
   const stripe = useStripe();
   const elements = useElements();
@@ -18,23 +19,41 @@ function Payment() {
   const [processing, setProcessing] = useState("");
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
-  const [secret, setClientSecret] = useState(true);
+  const [clientSecret, setClientSecret] = useState(true);
 
   useEffect(() => {
     const getClientSecret = async () => {
       const response = await axios({
         method: "post",
+
         url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
       });
+      setClientSecret(response.data.clientSecret);
     };
+
     getClientSecret();
   }, [basket]);
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     setProcessing(true);
 
-    const payload = await stripe;
+    const payload = await stripe
+      .confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: elements.getElement(CardElement),
+        },
+      })
+      .then(({ paymentIntent }) => {
+        setSucceeded(true);
+        setError(null);
+        setProcessing(false);
+
+        dispatch({
+          type: 'EMPTY_BASKET'
+        })
+
+        history.replace("/orders");
+      });
   };
 
   const handleChange = (event) => {
@@ -83,7 +102,7 @@ function Payment() {
             <form onSubmit={handleSubmit}>
               <CardElement onChange={handleChange} />
 
-              <div classNmae="paymentPriceContainer">
+              <div className="paymentPriceContainer">
                 <CurrencyFormat
                   renderText={(value) => <h3>Order Total:{value}</h3>}
                   decimalScale={2}
@@ -96,6 +115,7 @@ function Payment() {
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                 </button>
               </div>
+
               {error && <div>{error}</div>}
             </form>
           </div>
