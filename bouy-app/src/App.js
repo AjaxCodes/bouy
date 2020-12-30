@@ -13,6 +13,12 @@ import ChatPage from "./Pages/ChatPage";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
+const promise = loadStripe(
+  "pk_test_51I3HYtAtOXsh2jbLYPQlUFZtgkvxpufRkkAJbtZqhz2IrMAfIgdsXpWllCLEwBTgZlvkQJatjsn2MkJUt5lfHGsq00rDOyTDx4"
+);
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -55,8 +61,7 @@ function App() {
           </Route>
 
           <Route path="/chat">
-           
-            <ChatPage/>
+            <ChatPage />
           </Route>
 
           <Route path="/store">
@@ -72,9 +77,11 @@ function App() {
             <Checkout />
           </Route>
 
-          <Route path="/payment">
-            <Payment />
-          </Route>
+          <Elements stripe={promise}>
+            <Route path="/payment">
+              <Payment />
+            </Route>
+          </Elements>
 
           <Route path="/">
             <Header />

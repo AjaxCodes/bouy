@@ -1,13 +1,13 @@
 .payment {
   background: white;
+  scroll-behavior: auto;
 }
 .paymentContainer > h1 {
-  display: flex;
   text-align: center;
   padding: 10px;
   font-weight: 400;
-  background-color: lightgoldenrodyellow;
-  border-bottom: 1px solid #ffb735;
+  background-color: #ffb735;
+  border-bottom: 3px solid#1f00df;
 }
 .paymentContainer > h1 a {
   text-decoration: none;
@@ -21,11 +21,11 @@
 }
 .paymentTitle {
   flex: 0.2;
+  padding: 10px;
 }
-.paymentAddress,
 .paymentItems {
   flex: 0.8;
 }
-.paymentAddress .paymentItems .paymentDetails {
+.paymentAddress, .paymentItems, .paymentDetails {
   flex: 0.8;
 }

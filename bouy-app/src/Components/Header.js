@@ -6,7 +6,6 @@ import MoodBadIcon from "@material-ui/icons/MoodBad";
 import PolicyIcon from "@material-ui/icons/Policy";
 import PersonIcon from "@material-ui/icons/Person";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import ChatPage from "../Pages/ChatPage";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../StateProvider";
 import { auth } from "../firebase";

@@ -22,12 +22,15 @@ function ChatPage() {
             <div className="chatPageBody">
               <Sidebar />
               <Switch>
+
                 <Route path="/room/:roomId">
                   <Chat />
                 </Route>
+
                 <Route path="/chat">
                   <h1>welcome</h1>
                 </Route>
+                
               </Switch>
             </div>
           </>
