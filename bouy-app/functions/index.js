@@ -38,3 +38,7 @@ exports.api = functions.https.onRequest(app);
 
 //my endpoint
 //(http://localhost:5001/bouy-af08d/us-central1/api)
+
+//        to start backend
+
+//     firebase emulators:start
