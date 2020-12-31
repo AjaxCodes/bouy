@@ -94,7 +94,9 @@ function App() {
             </Route>
           </Elements>
 
-          <Route path="/"></Route>
+          <Route path="/">
+            {/* null because must be last and promis mutes anything below it*/}
+          </Route>
         </Switch>
       </div>
     </Router>
